@@ -209,7 +209,7 @@ function onMessageArrived(r_message) {
 }
 
 // Location Functions
-async function geoFindMe() {
+/** async function geoFindMe() {
   document.getElementById("share-status-message").innerHTML = "";
   document.getElementById("share-status-message").className = "share-message";
 
@@ -256,7 +256,7 @@ async function geoFindMe() {
       Weather: weather
     }); */
 
-    const payload = {
+    /* const payload = {
       Lat: lat,
       Long: lng,
       Temperature: temp,
@@ -272,7 +272,7 @@ async function geoFindMe() {
     console.log("Message payload:", info);
     mqtt.send(message); */
 
-    const message = new Paho.MQTT.Message(info);
+    /* const message = new Paho.MQTT.Message(info);
     message.destinationName = "ENGO-651/SRTPA/my_temperature";
     message.qos = 1; // Add this line
     message.retained = false; // Add this line
@@ -291,10 +291,10 @@ async function geoFindMe() {
     document.getElementById("share-status-message").innerHTML = `Error: ${error.message}`;
     document.getElementById("share-status-message").className = "share-message share-error";
   }
-}
+} */
 
 // Event Listeners
-document.querySelector('#find-me').addEventListener('click', geoFindMe);
+// document.querySelector('#find-me').addEventListener('click', geoFindMe);
 
 function updateMapMarker(lat, lng, temp) {
   map.removeLayer(marker);
